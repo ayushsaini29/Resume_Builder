@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.dashboard.entity.Review;
 import com.dashboard.entity.Template;
@@ -18,7 +20,8 @@ import com.dashboard.service.ReviewService;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/api/home")
 public class HomeController {
 
     private final EventService eventService;

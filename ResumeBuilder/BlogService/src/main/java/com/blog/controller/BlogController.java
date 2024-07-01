@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.blog.entity.Blog;
 import com.blog.service.BlogService;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,9 +33,9 @@ public class BlogController {
         return blogService.getBlogById(id);
     }
 
-    @PostMapping
-    public Blog createBlog(@RequestParam("blog") Blog blog, @RequestParam("file") MultipartFile file) {
-        return blogService.createBlog(blog, file);
+    @PostMapping("/createblog")
+    public Blog createBlog(@RequestParam Blog blog) throws IOException{
+        return blogService.createBlog(blog);
     }
 
     @PutMapping("/{id}")

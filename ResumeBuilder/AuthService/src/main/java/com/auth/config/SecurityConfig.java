@@ -17,7 +17,7 @@ import com.auth.service.RedirectService;
 @Configuration
 @EnableWebSecurity
 //@Order(Ordered.HIGHEST_PRECEDENCE)
-public class SecurityConfig extends WebSecurityConfiguration {
+public class SecurityConfig {
 
     @Value("${jwt.secret}")
     private String jwtSecret;

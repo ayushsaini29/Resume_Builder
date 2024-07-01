@@ -11,8 +11,10 @@ public class Blog {
     private String title;
     private String name;
     private String description;
-    private int ratings;
-    private String imageUrl;
+    private Integer ratings;
+    
+    @Lob
+    private String image;
 
     // Getters and Setters
     public Long getId() {
@@ -47,20 +49,20 @@ public class Blog {
         this.description = description;
     }
 
-    public int getRatings() {
+    public Integer getRatings() {
         return ratings;
     }
 
-    public void setRatings(int ratings) {
+    public void setRatings(Integer ratings) {
         this.ratings = ratings;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage() {
+        return image;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImage(String imagePath) {
+        this.image = imagePath;
     }
 }
 
