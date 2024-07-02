@@ -11,7 +11,7 @@ public class Blog {
     private String title;
     private String name;
     private String description;
-    private Integer ratings;
+    private int ratings;
     
     @Lob
     private String image;
@@ -49,11 +49,11 @@ public class Blog {
         this.description = description;
     }
 
-    public Integer getRatings() {
+    public int getRatings() {
         return ratings;
     }
 
-    public void setRatings(Integer ratings) {
+    public void setRatings(int ratings) {
         this.ratings = ratings;
     }
 

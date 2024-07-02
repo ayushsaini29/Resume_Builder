@@ -34,8 +34,17 @@ public class BlogController {
     }
 
     @PostMapping("/createblog")
-    public Blog createBlog(@RequestParam Blog blog) throws IOException{
-        return blogService.createBlog(blog);
+    public Blog createBlog(@RequestParam String title, 
+    		@RequestParam String name, 
+    		@RequestParam String description,
+    		@RequestParam int ratings,
+    		@RequestParam MultipartFile image) throws IOException{
+    	Blog blog = new Blog();
+    	blog.setTitle(title);
+    	blog.setName(name);
+    	blog.setDescription(description);
+    	blog.setRatings(ratings);
+        return blogService.createBlog(blog, image);
     }
 
     @PutMapping("/{id}")

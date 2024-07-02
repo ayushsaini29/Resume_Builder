@@ -31,9 +31,9 @@ public class BlogService {
         return blogRepository.findById(id);
     }
 
-    public Blog createBlog(Blog blog) {
-//        String imageUrl = fileStorageService.storeFile(file);
-//        blog.setImage(imageUrl);
+    public Blog createBlog(Blog blog, MultipartFile file) {
+        String imageUrl = fileStorageService.storeFile(file);
+        blog.setImage(imageUrl);
         return blogRepository.save(blog);
     }
 
@@ -43,10 +43,10 @@ public class BlogService {
         blog.setName(blogDetails.getName());
         blog.setDescription(blogDetails.getDescription());
         blog.setRatings(blogDetails.getRatings());
-        if (file != null && !file.isEmpty()) {
-            String imageUrl = fileStorageService.storeFile(file);
-            blog.setImage(imageUrl);
-        }
+//        if (file != null && !file.isEmpty()) {
+//            String imageUrl = fileStorageService.storeFile(file);
+//            blog.setImage(imageUrl);
+//        }
         return blogRepository.save(blog);
     }
 
